@@ -2,7 +2,7 @@
 
 A clean, creature-search interface for RPG fans. Search by name or ID to view creature stats, types, and special info. Built with HTML, CSS, and JavaScript — fast, responsive, and easy to use.
 
-🔗 **Live Demo**: [https://jeffamazed.github.io/rpg-creature-search-app/](https://jeffamazed.github.io/rpg-creature-search-app/) *(replace with actual link)*
+🔗 **Live Demo**: [https://jeffamazed.github.io/rpg-creature-search-app/](https://jeffamazed.github.io/rpg-creature-search-app/)
 
 ## 🚀 Features
 
