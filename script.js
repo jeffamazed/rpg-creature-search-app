@@ -58,21 +58,17 @@ loadCreaturesListAndData();
 const checkCreaturesList = (input) => {
   if (!creaturesListCache) return false;
 
-  const normalizedInput = input.toLowerCase();
-
   return creaturesListCache.some(({ id, name }) => 
-    normalizedInput === id.toString() || 
-    normalizedInput === name.toLowerCase()
+    input === id.toString() || 
+    input === name.toLowerCase()
   );
 }
 
 const getCreatureByNameOrId = (nameOrId) => {
-  const normalizedNameOrId = nameOrId.toLowerCase();
-
   const selectedCreature = creaturesDataCache.find(
     creature => 
-      creature.id.toString() === normalizedNameOrId || 
-      creature.name.toLowerCase() === normalizedNameOrId
+      creature.id.toString() === nameOrId || 
+      creature.name.toLowerCase() === nameOrId
   );
 
   return selectedCreature;
@@ -139,7 +135,7 @@ const waitForDataToLoad = () => {
 // INTERACTIVITY
 
 searchButton.addEventListener("click", async () => {
-  const inputValue = searchInput.value.trim();
+  const inputValue = searchInput.value.trim().toLowerCase();
   
   try {
     await waitForDataToLoad();
