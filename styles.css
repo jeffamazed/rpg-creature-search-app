@@ -10,10 +10,13 @@ html {
 
 :root {
   --background-color-main: #E57373;
+  --more-info-background-color: #A97449;
+  --more-info-table-color: #f7c8a2;
   --font-color-all: #eaeaea;
   --background-color-app: #2f5d9a;
   --button-color: #FFCB05;
   --button-color2: #b08d00;
+  --table-background-color: #24b962;
   --type-font-color: #121212;
   --fire-type: #ff1919;
   --dragon-type: #8a2be2;
@@ -47,7 +50,7 @@ body {
   margin: 20px;
   gap: 20px;
   text-align: center;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 .logo-container {
@@ -90,6 +93,55 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  padding: 3px;
+  font-size: 1.5rem;
+}
+
+.more-info {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  z-index: 1;
+  background-color: var(--more-info-background-color);
+  border-top: 2px solid #d4935e;
+  border-left: 2px solid #d4935e;
+  border-right: 2px solid #92633d;
+  border-bottom: 2px solid #92633d;
+  top: 0;
+  left: 0;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-x: auto;
+  transition: 0.15s opacity ease;
+}
+
+.tooltip:hover .more-info {
+  visibility: visible;
+  opacity: 1;
+}
+
+.more-info-table {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.more-info table, .more-info th, .more-info td {
+  border: 4px solid var(--more-info-background-color);
+  border-collapse: collapse;
+  padding: 5px 10px;
+  background-color: var(--more-info-table-color);
+  color: var(--type-font-color);
 }
 
 .user-input-container {
@@ -170,11 +222,11 @@ input {
 
 .creature-main-info {
   border-collapse: collapse;
-  background-color: #50C878;
+  background-color: var(--table-background-color);
   width: 100%;
 }
 
-th, td {
+.creature-main-info th, .creature-main-info td {
   border: 4px solid var(--background-color-app);
   padding: 5px;
 }
@@ -345,5 +397,9 @@ th, td {
 
   .creature-type {
     font-size: 1.8rem;
+  }
+
+  .tooltip {
+    font-size: 1.7rem;
   }
 }
