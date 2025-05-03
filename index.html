@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RPG Creature Search App</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <header>
+        <div class="logo-container">
+          <canvas></canvas>
+          <span>jeffamazed</span>
+        </div>
+      </header>
+      <main>
+        <h1>RPG Creature Search App</h1>
+        <div class="search-app-container">
+          <div class="user-input-container">
+            <label for="search-input">
+              Search for Creature Name or ID:
+            </label>
+            <div class="input-button-container">
+              <input 
+              id="search-input"
+              type="text" 
+              required/>
+              <button
+              id="search-button"
+              type="button"
+              class="search-button"
+              aria-label="Search">
+                Search
+              </button>
+            </div>
+          </div>
+          <div 
+          id ="search-result-container"
+          class="search-result-container">
+            <div class="creature-basic-info">
+              <div>
+                <strong>
+                  <span id="creature-name"></span>&nbsp;#
+                </strong>
+                <span id="creature-id">1</span>
+              </div>
+              <div>
+                Weight: 
+                <span id="weight"></span> 
+                Height: 
+                <span id="height"></span>
+              </div>
+              <div id="types" class="creature-types"></div>
+            </div>
+            <div class="creature-special-info">
+              <div>
+                <strong>
+                  <span id="special-name"></span>
+                </strong>
+              </div>
+              <div id="special-desc"></div>
+            </div>
+          </div>
+          <div class="table-wrapper">
+          <table class="creature-main-info">
+            <thead>
+              <tr>
+                <th>Base</th>
+                <th>Stats</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>HP&nbsp;:</td>
+                <td id="hp"></td>
+              </tr>
+              <tr>
+                <td>Attack&nbsp;:</td>
+                <td id="attack"></td>
+              </tr>
+              <tr>
+                <td>Defense&nbsp;:</td>
+                <td id="defense"></td>
+              </tr>
+              <tr>
+                <td>Sp. Attack&nbsp;:</td>
+                <td id="special-attack"></td>
+              </tr>
+              <tr>
+                <td>Sp. Defense&nbsp;:</td>
+                <td id="special-defense"></td>
+              </tr>
+              <tr>
+                <td>Speed&nbsp;:</td>
+                <td id="speed"></td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
