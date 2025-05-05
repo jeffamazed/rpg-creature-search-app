@@ -123,7 +123,7 @@ const waitForDataToLoad = () => {
     }, 5000); 
     
     const interval = setInterval(() => {
-      if (creaturesDataCache) {
+      if (creaturesDataCache && creaturesListCache) {
         clearInterval(interval);
         clearTimeout(timeout);
         resolve();
